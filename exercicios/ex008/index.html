@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios de if e else</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input#txtvl, input#txtps1 {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Site Detran</h1>
+    
+    Sua Velocida é <input type="number" name="txtvl" id="txtvl"> kw/h
+
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <div id="res"> </div>
+
+    <hr>
+
+    <h1>Qual seu pais ?</h1>
+
+    Nos informe qual é o seu pais <input type="text" name="txtps1" id="txtps1" >
+
+    <input type="button" value="Enviar" onclick="enviar()">
+
+    <div id="pais"> </div>
+    <script>
+
+        function verificar() {
+        var vel = window.document.getElementById('txtvl')
+        var res = window.document.getElementById('res')
+        var vel = Number(vel.value) 
+        res.innerHTML = `<p> Seu carro esta a ${vel} kw/h <p>`
+             if (vel > 60) {
+            res.innerHTML += `<p> Você foi Multado <p>`
+        } 
+        res.innerHTML += `<p> Use sempre cinto de segurança <p> `        
+        }
+
+        function enviar() {
+            var ps1 = window.document.getElementById('txtps1')
+            var pais = window.document.getElementById('pais')
+
+            if (ps1.value == 'Brasil') {
+                pais.innerHTML = `Você é Brasileiro`
+            } else {
+                pais.innerHTML = `Você é Estrangeiro`
+            }
+
+        }
+
+    </script>
+</body>
+</html>
